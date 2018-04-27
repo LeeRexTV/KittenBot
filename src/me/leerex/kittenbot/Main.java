@@ -1,5 +1,6 @@
 package me.leerex.kittenbot;
 
+import me.leerex.kittenbot.Commands.CommandExecutor;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
@@ -23,7 +24,7 @@ public class Main {
         try {
             jda = builder.buildBlocking();
 
-            jda.addEventListener(new Commands());
+            jda.addEventListener(new CommandExecutor());
             jda.addEventListener(new JoinEvent());
 
 
