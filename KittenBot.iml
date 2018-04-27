@@ -9,5 +9,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="JDA-3.6.0_359-withDependencies (1)" level="project" />
     <orderEntry type="library" name="slf4j-simple-1.7.25" level="project" />
+    <orderEntry type="library" name="JDA-3.6.0_354-withDependencies" level="project" />
   </component>
 </module>

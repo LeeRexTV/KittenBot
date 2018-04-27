@@ -29,11 +29,16 @@ public class CommandExecutor extends ListenerAdapter {
         }
 
 
-        if(e.getMessage().getContentRaw().equalsIgnoreCase("k!welcome")){
+        if(e.getMessage().getContentRaw().startsWith("k!welcome")){
+            args = e.getMessage().getContentRaw().split(" ");
 
-            welcome.action(e);
-
-            //e.getChannel().sendMessage("\\❌ Not enough arguments!").queue();
+            if(args.length < 2){
+                e.getChannel().sendMessage("\\❌ Not enough arguments!").queue();
+            }else if (args.length > 2){
+                e.getChannel().sendMessage("\\❌ Too many arguments!").queue();
+            } else{
+                welcome.action(args,e);
+            }
         }
     }
 }
