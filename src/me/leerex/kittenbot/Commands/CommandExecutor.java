@@ -8,6 +8,7 @@ public class CommandExecutor extends ListenerAdapter {
     public static invite invite = new invite();
     public static usercount usercount = new usercount();
     public static welcome welcome = new welcome();
+    public static Mute Mute = new Mute();
 
     public static String[] args;
 
@@ -28,8 +29,22 @@ public class CommandExecutor extends ListenerAdapter {
             help.action(e);
         }
 
+        if(e.getMessage().getContentRaw().equalsIgnoreCase("k!mute")){
+
+            args = e.getMessage().getContentRaw().split(" ");
+
+            if(args.length < 2){
+                e.getChannel().sendMessage("\\❌ Not enough arguments!").queue();
+            }else if (args.length > 2){
+                e.getChannel().sendMessage("\\❌ Too many arguments!").queue();
+            } else{
+                Mute.action(args,e);
+            }
+        }
+
 
         if(e.getMessage().getContentRaw().startsWith("k!welcome")){
+
             args = e.getMessage().getContentRaw().split(" ");
 
             if(args.length < 2){
